@@ -16,6 +16,7 @@ def csv_to_df(file_path):
     df = pd.read_csv(file_path)
     df = remove_columns(df)
     df = patch_votes(df)
+    df = encode_faction(df)
     df["source"] = path.splitext(file_path)[0]
     return df
 

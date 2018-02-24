@@ -6,6 +6,6 @@ FACTION_LABELS = ["AfD",
                   "FDP",
                   "CDU/CSU",
                   "SPD",
-                  "B\xc3\x9c90/GR",
-                  "DIE LINKE."
-                  "Fraktionslos"]
+                  "DIE LINKE.",
+                  "Fraktionslos",
+                  'B\xc3\x9c90/GR']
