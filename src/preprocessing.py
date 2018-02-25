@@ -14,6 +14,11 @@ from constants import FACTION_LABELS
 
 def csv_to_df(file_path):
     df = pd.read_csv(file_path)
+    df = df[df["Wahlperiode"] == 19]
+
+    if df.size == 0:
+        print "Warning: Only the 19th Bundestag is selected here. This file is not from there."
+
     df = remove_columns(df)
     df = patch_votes(df)
     df = encode_faction(df)
