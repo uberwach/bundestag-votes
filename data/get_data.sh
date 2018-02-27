@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-rm raw.html
+rm -f raw.html
 touch raw.html
 
 echo "<document>" >> raw.html
@@ -14,10 +14,10 @@ curl 'https://www.bundestag.de/ajax/filterlist/de/parlament/plenum/abstimmung/li
 
 echo "</document>" >> raw.html
 
-rm links.txt
+rm -f links.txt
 xmllint --format --xpath '//a[@class="bt-link-dokument"]/@href' raw.html > links.txt
 
-mkdir raw
+mkdir -p raw
 
 grep -o '[^"]*\.xls' links.txt | while read -r path ;
 do
@@ -27,4 +27,4 @@ do
 done
 
 
-rm raw.html links.txt
+rm -f raw.html links.txt

@@ -1,6 +1,6 @@
 #!/usr/bin bash
 
-mkdir raw_csv
+mkdir -p raw_csv
 
 for file in raw/* ; do
     echo "Converting Excel $file to CSV format."
