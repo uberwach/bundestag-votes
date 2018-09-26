@@ -17,7 +17,7 @@ def csv_to_df(file_path):
     df = df[df["Wahlperiode"] == 19]
 
     if df.size == 0:
-        print "Warning: Only the 19th Bundestag is selected here. This file is not from there."
+        print("Warning: Only the 19th Bundestag is selected here. This file is not from there.")
 
     df = remove_columns(df)
     df = patch_votes(df)
@@ -52,6 +52,7 @@ def encode_faction(df):
     le = LabelEncoder()
     le.fit(FACTION_LABELS)
     df["Fraktion"] = le.transform(df["Fraktion/Gruppe"])
+    df["Fraktion"].replace("B\xc3\x9c90/GR", "BÜ90/GR", inplace=True)
     return df
 
 
